@@ -10,4 +10,4 @@ In this notebook, we replicated the GRU structure, which was mentioned in the pa
 We used the signal stock's relative fundamental and pricing data as input features to predict the indicator 'EBITV/EV'.The results showed we overfitted a little bit, therefore, the next step is to optimized the parameters and utilize more data
 
 # Back Test
-Thanks to Jerry, we got our backtest run smoothly and we could track the portfolio value and record position history, pretty cool and well done!!!
+Thank you Jerry!! we got our backtest run smoothly and we could track the portfolio value and record position history, pretty cool. Good jobs guys!
