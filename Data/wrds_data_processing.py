@@ -212,7 +212,6 @@ class DataProcessing(object):
         new_df['mrkcap'] = new_df['prccm']*new_df['cshoq_mrq']
         new_df['entval'] = new_df['mrkcap'] + new_df['dlttq_mrq'] + \
                             new_df['dlcq_mrq'] - new_df['cheq_mrq']
-
         return new_df, price_df_for_mom
 
     def get_mom(self, new_df, price_df, period):
