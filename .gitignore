@@ -1,8 +1,7 @@
-Data/data.dat
-.idea/modules.xml
-.idea/vcs.xml
-.idea/workspace.xml
 .DS_Store
-.idea/deeplearninveststrat.iml
-.idea/misc.xml
+Data/data.dat
+Data/data_subset.csv
+Data/.ipynb_checkpoints/*
+Data/.idea/*
+.idea/*
 .ipynb_checkpoints/*

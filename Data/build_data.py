@@ -204,7 +204,7 @@ stock_split_df_all.datadate = pd.to_datetime(stock_split_df_all.datadate, format
 #############################
 
 # Build balance sheet features
-blnc_sheet_list = ['cheq', 'rectq', 'invtq', 'acoq', 'ppentq', 'aoq',
+blnc_sheet_lisxt = ['cheq', 'rectq', 'invtq', 'acoq', 'ppentq', 'aoq',
                    'dlcq', 'apq', 'txpq', 'lcoq', 'ltq', 'dlttq', 'cshoq', 'seqq', 'atq']
 
 # Build income sheet features
