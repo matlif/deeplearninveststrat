@@ -4,9 +4,7 @@ from tensorflow.python.ops import rnn
 import tensorflow as tf
 import pandas as pd
 import numpy as np
-# import matplotlib.pyplot as plt
 import os
-import json
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -178,7 +176,7 @@ class MyLSTM:
         nameList = [self.hm_epochs, self.n_batches, self.rnn_size, self.num_layers, self.attention]
         nameList = [str(i) for i in nameList]
         nameList = ''.join(nameList)
-        export_dir = './Models/{0}'.format('LSTM-' + datetime.strftime(datetime.now(), '%Y%m%d%H%M') +'-Paras-' + nameList + '/')
+        export_dir = './Results/{0}'.format('LSTM-' + datetime.strftime(datetime.now(), '%Y%m%d%H%M') +'-Paras-' + nameList + '/')
         return export_dir
 
     def recurrent_neural_network(self, x):
@@ -412,22 +410,17 @@ class MyWrapper:
         portfolio = portfolio.dropna()
         portfolio.to_csv(export_dir+'/MyPortfolio.csv')
 
-        # plt.figure(figsize=(18, 7))
-        # plt.plot(portfolio['PortfolioValue'], '*-', label='Our Portfolio')
-        # plt.plot(portfolio['SPXBench'], label='SPX')
-        # plt.grid()
-        # plt.legend(loc=0, prop={'size': 12})
-        # plt.savefig(export_dir+'/PnL.png')
         print(f'Finised, results path is {export_dir}')
+        return self.parameters, MAE, MSE, pnl, mysharpe
 
 
 if __name__ == '__main__':
     data = pd.read_csv('/Users/bowen/Desktop/H/deeplearninveststrat/Data/100_clean.csv', index_col=0)
     parameters = {'hm_epochs': 20,
                   'n_batches':4,
-                  'rnn_size': 32,
+                  'rnn_size': 10,
                   'num_layers': 1,
-                 'attention': False}
+                 'attention': True}
 
     MyWrapper = MyWrapper(data, parameters)
-    MyWrapper.run()
+    parameters, MAE, MSE, pnl, mysharpe = MyWrapper.run()
