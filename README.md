@@ -13,15 +13,12 @@ We used the signal stock's relative fundamental and pricing data as input featur
 Thank you Jerry!! we got our backtest run smoothly and we could track the portfolio value and record position history, pretty cool. Good jobs guys!
 
 
-# About the Wrapper
+# Tuning the Hyperparameters
 
-Please download the 'finalWrapper.py', it's a useful tool to tune parameters of our model. 
+Please download the 'TuningParameters.ipynb', it's a useful tool to tune parameters of our model. 
 
-* After your download it, please see the lastest content of the code, where the '__main__' locates
-* you could either change the parameters in the main function or you could import the 'finalWrapper.py' as an package and run it in the jupyter notebook
+* The TuningParameters.ipynb contains two wrappers, which can automatically normalize data, train models, make prediction and generate the prediction results and back testing results. In the end, these results would be automatically saved in the folder 'Results' (If there's no 'Results' folder in your directory, don't worry, it will be created automatically)
 
-* The finalWrapper will automatically normalize data, train models, make prediction and generate the prediction results and back testing results. In the end, these results would be automatically saved in the folder 'Models' (If there's no 'Models' folder in your directory, don't worry, it will be created automatically)
-
-*Then, you could find the results in the 'Models' folder.
+*Then, you could find the results in the 'Results' folder.
 
 Happy Holidays!!
