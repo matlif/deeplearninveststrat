@@ -19,6 +19,6 @@ Please download the 'TuningParameters.ipynb', it's a useful tool to tune paramet
 
 * The TuningParameters.ipynb contains two wrappers, which can automatically normalize data, train models, make prediction and generate the prediction results and back testing results. In the end, these results would be automatically saved in the folder 'Results' (If there's no 'Results' folder in your directory, don't worry, it will be created automatically)
 
-*Then, you could find the results in the 'Results' folder.
+* Then, you could find the results in the 'Results' folder.
 
 Happy Holidays!!
