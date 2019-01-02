@@ -137,7 +137,8 @@ class MyLSTM:
             'n_batches': 4,
             'rnn_size': 64,
             'num_layers': 1,
-            'attention': False
+            'attention': False,
+            'learning_rate': 0.001
             }
         self.parameters = parameters
         self.X_train = X_train
@@ -152,6 +153,7 @@ class MyLSTM:
         self.rnn_size = self.default_Parameters['rnn_size']
         self.num_layers = self.default_Parameters['num_layers']
         self.attention = self.default_Parameters['attention']
+        self.learning_rate = self.default_Parameters['learning_rate']
 
         if parameters:
             self.hm_epochs = self.parameters['hm_epochs']
@@ -159,6 +161,7 @@ class MyLSTM:
             self.rnn_size = self.parameters['rnn_size']
             self.num_layers = self.parameters['num_layers']
             self.attention = self.parameters['attention']
+            self.learning_rate = self.parameters['learning_rate']
 
         self.batch_size = self.X_train.shape[0] / self.n_batches
         self.chunk_size = self.X_train.shape[2]
@@ -173,10 +176,12 @@ class MyLSTM:
 
 
     def creatDirectory(self):
-        nameList = [self.hm_epochs, self.n_batches, self.rnn_size, self.num_layers, self.attention]
+        nameList = [self.hm_epochs, self.n_batches, self.rnn_size, self.num_layers,self.learning_rate, self.attention]
         nameList = [str(i) for i in nameList]
         nameList = ''.join(nameList)
-        export_dir = './Results/{0}'.format('LSTM-' + datetime.strftime(datetime.now(), '%Y%m%d%H%M') +'-Paras-' + nameList + '/')
+        if '.' in nameList:
+            nameList = nameList.replace('.', '-')
+        export_dir = './Results2/{0}'.format('LSTM-' + datetime.strftime(datetime.now(), '%Y%m%d%H%M') +'-Paras-' + nameList + '/')
         return export_dir
 
     def recurrent_neural_network(self, x):
@@ -211,7 +216,7 @@ class MyLSTM:
         y = tf.placeholder('float')
         prediction = self.recurrent_neural_network(x)
         cost = tf.losses.mean_squared_error(predictions=prediction, labels=y)
-        optimizer = tf.train.AdamOptimizer().minimize(cost)
+        optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate).minimize(cost)
 
         with tf.Session() as sess:
             sess.run(tf.initialize_all_variables())
@@ -281,12 +286,12 @@ class MyWrapper:
         for key in keys:
             df_temp = self.df[self.df['gvkey'] == key].drop(['gvkey'], axis=1)
             if len(df_temp) != 115:
-                print(f'we drop the {key}')
+                #print(f'we drop the {key}')
                 continue
 
             # Some columns have all Nan
             if df_temp.isnull().all().any():
-                print(f'we drop the {key}')
+                #print(f'we drop the {key}')
                 continue
 
             self.used_keys.append(key)
@@ -420,7 +425,8 @@ if __name__ == '__main__':
                   'n_batches':4,
                   'rnn_size': 10,
                   'num_layers': 1,
-                 'attention': True}
+                 'attention': True,
+                  'learning_rate':0.01}
 
     MyWrapper = MyWrapper(data, parameters)
     parameters, MAE, MSE, pnl, mysharpe = MyWrapper.run()
