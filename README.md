@@ -34,8 +34,8 @@ We tried to pick the best model by inputting different **epoch number, batch siz
 
 # Miscellaneous
 
-# AutoEncoder
-## AutoEncoder.py and AutoencoderDenosing.ipynb
+## AutoEncoder
+### AutoEncoder.py and AutoencoderDenosing.ipynb
 
 We implemented the AutoEncoder to denoise dataset, please see this jupyter notebook to find more detail. The **DenosingData.csv** is the final result.
 
