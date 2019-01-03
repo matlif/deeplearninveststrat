@@ -2,7 +2,7 @@
 A factor-based quantitative investing strategy that employs deep neural networks to forecast company fundamentals, based on John Alberg and Zachary Lipton's paper "Improving Factor-Based Quantitative Investing by Forecasting Company Fundamentals".
 
 # Data
-Please make sure you put these dataset in a proper directory so that you could read them in your code
+Note: Please make sure you put these dataset in a proper directory so that you could read them in your code
 
 ## 100_clean.csv
 This dataset is our training and testing dataset. This dataset contains quarterly consecutive fundamental data of 100 stocks from 1990 to 2018. Because the paper utilized these fundamental data as features input to predict the EBIT/EV ratio, so we replicate this method. 
