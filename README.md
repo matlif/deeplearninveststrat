@@ -2,45 +2,45 @@
 A factor-based quantitative investing strategy that employs deep neural networks to forecast company fundamentals, based on John Alberg and Zachary Lipton's paper "Improving Factor-Based Quantitative Investing by Forecasting Company Fundamentals".
 
 # Data
-Note: Please make sure you put these dataset in a proper directory so that you could read them in your code
+Note: Datasets must be moved to the appropriate directory if you would like to run the code
 
 ## 100_clean.csv
-This dataset is our training and testing dataset. This dataset contains quarterly consecutive fundamental data of 100 stocks from 1990 to 2018. Because the paper utilized these fundamental data as features input to predict the EBIT/EV ratio, so we replicate this method. 
+This dataset is our training and testing dataset. It contains quarterly consecutive fundamental data of 100 stocks from 1990 to 2018.
 
 ## monthendpricehistory.xls
-This dataset is from CBOE official website, and it contains SPX index quarterly price. We used the SPX as the benchmark, and we compared our portfolio with the benchmark in our final report.
+This dataset is from the CBOE official website, and it contains SPX index quarterly price. We used the SPX as the benchmark, and we compared our portfolio with the benchmark in our final report.
 
 # Models
-We tried to use the OLS, Basic RNN, LSTM and GRU to quarterly predict the EBIT/EV ratio. 
+We tried to use the OLS, Basic RNN, LSTM and GRU to predict the EBIT/EV ratio quarterly. 
 
 ## linear_model.ipynb
-In this jupyter notebook, we implemented the OLS to predict EBIT/EV ratio. Also, we summarized the ols results.
+In this Jupyter Notebook, we implemented OLS to predict the EBIT/EV ratio. Also, we summarize the OLS results.
 
 ## finalWrapper.py 
-There are three finalWrapper python files (finalWrapper.py ,finalWrapper2.py, finalWrapper3.py ), they are corresponding to the LSTM, GRU and Basic RNN model. The inputs of finalWrapper are dataset and model's parameters. The finalWrapper can achieve the following functions: 
+There are three finalWrapper python files (finalWrapper.py ,finalWrapper2.py, finalWrapper3.py ), they correspond to the LSTM, GRU and Basic RNN model. The inputs of finalWrapper are dataset and model parameters. The finalWrapper achieves the following: 
 
-* Automatically normalize data, adjusted data shape according to models' need
+* Automatically normalize data, adjusted data shape according to models' needs
 * Train models, make the prediction and generate the prediction results
 * Run back testing 
 * Automatically save each result in 'Results' folder  (If there's no 'Results' folder in your directory, don't worry, it will be created automatically)
 
 # BackTesting.py
-We built an efficient backtest module. It could record the quarterly portfolio value, detailed long/short trade history and the trading price of each trade.
+We built an efficient backtest module. It can record the quarterly portfolio value, detailed long/short trade history and the trading price of each trade.
 
 # Pick the Best Model
 
 ## ParameterTuning.ipynb
-We tried to pick the best model by inputting different **epoch number, batch size, network depth, neural numbers, learning rate and different structure**. We tried more than 400 pairs of parameters in total. This jupyter notebook imports the finalWrappers, and could help us tune these hyperparameters
+We tried to pick the best model by inputting different **epoch number, batch size, network depth, neural numbers, learning rate and different structure**. We tried more than 400 pairs of parameters in total. This Jupyter Notebook imports the finalWrappers, and is used to help us tune the hyperparameters
 
 # Miscellaneous
 
 ## AutoEncoder
 ### AutoEncoder.py and AutoencoderDenosing.ipynb
 
-We implemented the AutoEncoder to denoise dataset, please see this jupyter notebook to find more detail. The **DenosingData.csv** is the final result.
+We implemented an AutoEncoder to denoise the dataset, please see this Jupyter Notebook for more detail. The **Data/denosing_data.csv** is the final result.
 
 ## Data+Model+BackTest.ipynb
-This jupyter notebook is the blueprint of the finalWrapper. The reason why we keep this is that you could see how each procedure works clearly.
+This Jupyter Notebook is the blueprint of the finalWrapper. We kept this so that you can clearly see how each procedure works.
 
 ## attention_real_with_all_data_combined.ipynb
-We tried to use the attention to enhance model performance. In this juputer notebook, it shows the results of attention LSTM
+We tried to use the attention to enhance model performance. This Juputer Notebook, it shows the results of attention LSTM
