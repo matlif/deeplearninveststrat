@@ -43,4 +43,4 @@ We implemented an AutoEncoder to denoise the dataset, please see this Jupyter No
 This Jupyter Notebook is the blueprint of the finalWrapper. We kept this so that you can clearly see how each procedure works.
 
 ## attention_real_with_all_data_combined.ipynb
-We tried to use the attention to enhance model performance. This Juputer Notebook, it shows the results of attention LSTM
+We tried to use the attention to enhance model performance. This Juputer Notebook, it shows the results of attention LSTM.
