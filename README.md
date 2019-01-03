@@ -3,14 +3,12 @@
 A factor-based quantitative investing strategy that employs deep neural networks to forecast company fundamentals, based on John Alberg and Zachary Lipton's paper "Improving Factor-Based Quantitative Investing by Forecasting Company Fundamentals".
 
 
-# SignelAssetAndIndicator
+# Data 
+## 100_clean.csv
+This data set is our training and testing dataset. This dataset contains quarterly consecutive fundamental data of 100 stocks from 1990 to 2018. Because the paper utilized these fundamental data as features input to predict the EBIT/EV ratio, so we replicate this method. 
 
-In this notebook, we replicated the GRU structure, which was mentioned in the paper of "Chung, J., Gulcehre, C., Cho, K., & Bengio, Y. (2014). Empirical evaluation of gated recurrent neural networks on sequence modeling. arXiv preprint arXiv:1412.3555."
-
-We used the signal stock's relative fundamental and pricing data as input features to predict the indicator 'EBITV/EV'.The results showed we overfitted a little bit, therefore, the next step is to optimized the parameters and utilize more data
-
-# Back Test
-Thank you Jerry!! we got our backtest run smoothly and we could track the portfolio value and record position history, pretty cool. Good jobs guys!
+## monthendpricehistory.xls
+This dataset is from CBOE official website, and it contains SPX index quarterly price. We used the SPX as the benchmark, and we compared our portfolio with the benchmark in our final report.
 
 
 # Tuning the Hyperparameters
@@ -22,3 +20,8 @@ Please download the 'TuningParameters.ipynb', it's a useful tool to tune paramet
 * Then, you could find the results in the 'Results' folder.
 
 Happy Holidays!!
+
+
+# Back Test
+Thank you Jerry!! we got our backtest run smoothly and we could track the portfolio value and record position history, pretty cool. Good jobs guys!
+
