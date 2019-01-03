@@ -2,7 +2,7 @@
 A factor-based quantitative investing strategy that employs deep neural networks to forecast company fundamentals, based on John Alberg and Zachary Lipton's paper "Improving Factor-Based Quantitative Investing by Forecasting Company Fundamentals".
 
 # Data
-please make sure you put these dataset in a proper directory so that you could read them
+Please make sure you put these dataset in a proper directory so that you could read them in your code
 
 ## 100_clean.csv
 This dataset is our training and testing dataset. This dataset contains quarterly consecutive fundamental data of 100 stocks from 1990 to 2018. Because the paper utilized these fundamental data as features input to predict the EBIT/EV ratio, so we replicate this method. 
@@ -40,7 +40,7 @@ We tried to pick the best model by inputting different **epoch number, batch siz
 We implemented the AutoEncoder to denoise dataset, please see this jupyter notebook to find more detail. The **DenosingData.csv** is the final result.
 
 ## Data+Model+BackTest.ipynb
-This jupyter notebook is the blue print of the finalWrapper. The reason why we keep this is that you could see how each percedure works clearly.
+This jupyter notebook is the blueprint of the finalWrapper. The reason why we keep this is that you could see how each procedure works clearly.
 
 ## attention_real_with_all_data_combined.ipynb
-We tried to use the attention to enhance model performence. In this juputer notebook, it shows the results of attetion LSTM
+We tried to use the attention to enhance model performance. In this juputer notebook, it shows the results of attention LSTM
